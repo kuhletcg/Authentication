@@ -19,7 +19,6 @@ const RegisterForm = () => {
         <Col sm="12" md={{ size: 6, offset: 3 }}>
           <div>
             <h2>Welcome</h2>
-            <span>Let's create your account!</span>
             <Form onSubmit={handleSubmit}>
               <FormGroup>
                 <Label for="username">Username</Label>
