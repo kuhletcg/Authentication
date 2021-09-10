@@ -9,9 +9,13 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import { useSelector } from "react-redux";
+
 import useForm from "./useForm";
 const RegisterForm = () => {
   const { handleChange, handleSubmit, formInfo } = useForm();
+
+  const error = useSelector((state) => state.error);
 
   return (
     <Container>
@@ -19,6 +23,8 @@ const RegisterForm = () => {
         <Col sm="12" md={{ size: 6, offset: 3 }}>
           <div>
             <h2>Welcome</h2>
+            <span>Let's create your account!</span>
+
             <Form onSubmit={handleSubmit}>
               <FormGroup>
                 <Label for="username">Username</Label>
