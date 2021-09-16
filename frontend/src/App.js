@@ -7,11 +7,10 @@ import RegisterForm from "./components/RegisterForm";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { loadUser } from "./redux/actions/auth";
 import PrivateRoute from "./routes/PrivateRoute";
-import Home from "./component/Home";
+import Home from "./components/Home";
 
 function App() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(loadUser());
   }, []);
@@ -20,10 +19,10 @@ function App() {
     <div>
       <Router>
         <switch>
-          <Route exact path="/" component={Home} />
-          <PrivateRoute path="/Dashboard" component={DashBoard} />
-          <Route path="/user/register" component={RegisterForm} />
-          <Route path="/user/login" component={LoginForm} />
+          <Route exact path="/" components={Home} />
+          <PrivateRoute path="/Dashboard" components={DashBoard} />
+          <Route path="/user/register" components={RegisterForm} />
+          <Route path="/user/login" components={LoginForm} />
         </switch>
       </Router>
     </div>
